@@ -1,0 +1,626 @@
+/* index.css - Оливковая тема с грид-сетками и адаптивом */
+
+/* ========== БАЗОВЫЕ СТИЛИ ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #F5F7E9 0%, #EBEFDD 100%);
+    color: #2C3A1F;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ========== ГРИД ДЛЯ КОНТЕЙНЕРОВ ========== */
+section > div:first-child,
+footer > div:first-child {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+/* ========== ШАПКА ========== */
+header {
+    background: #3C4A2F;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header > div:first-child {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+header div div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+header a {
+    color: #F5F7E9;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+header a:hover {
+    background: #5A6B47;
+    transform: translateY(-2px);
+}
+
+/* ========== ГЕРОЙ СЕКЦИЯ ========== */
+section:first-of-type > div:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+section:first-of-type img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+section:first-of-type img:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: #2C3A1F;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+section:first-of-type span {
+    display: inline-block;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    color: #6B7F4A;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    background: rgba(107, 127, 74, 0.1);
+    border-radius: 30px;
+}
+
+section:first-of-type p {
+    font-size: clamp(0.95rem, 3vw, 1rem);
+    margin: 20px 0;
+    color: #4A5A3A;
+}
+
+section:first-of-type > div > div:first-child > div:nth-of-type(2) {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+section:first-of-type a {
+    display: inline-block;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+section:first-of-type a:first-of-type {
+    background: #6B7F4A;
+    color: white;
+}
+
+section:first-of-type a:first-of-type:hover {
+    background: #5A6B3A;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(107, 127, 74, 0.3);
+}
+
+section:first-of-type a:last-of-type {
+    background: transparent;
+    color: #6B7F4A;
+    border: 2px solid #6B7F4A;
+}
+
+section:first-of-type a:last-of-type:hover {
+    background: #6B7F4A;
+    color: white;
+    transform: translateY(-2px);
+}
+
+section:first-of-type > div > div:first-child > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+section:first-of-type > div > div:first-child > div:last-child div span {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: bold;
+    color: #6B7F4A;
+    background: none;
+    padding: 0;
+}
+
+/* ========== ПОРТФОЛИО ========== */
+#portfolio > div:first-child {
+    background: rgba(107, 127, 74, 0.05);
+    border-radius: 30px;
+}
+
+#portfolio h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+    color: #2C3A1F;
+    margin-bottom: 10px;
+}
+
+#portfolio > div:first-child > p:first-of-type {
+    text-align: center;
+    color: #6B7F4A;
+    margin-bottom: 50px;
+}
+
+#portfolio h3 {
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    margin: 20px 0 10px;
+    color: #3C4A2F;
+}
+
+#portfolio > div:first-child > div {
+    margin-bottom: 60px;
+}
+
+#portfolio > div:first-child > div > p {
+    margin-bottom: 20px;
+    color: #6B7F4A;
+}
+
+/* Карусели */
+#track-brows, #track-lips, #track-eyes {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    background: #fff;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+button[data-carousel] {
+    background: #6B7F4A;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin: 15px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+button[data-carousel]:hover {
+    background: #5A6B3A;
+    transform: scale(1.1);
+}
+
+/* ========== УСЛУГИ ========== */
+#services > div:first-child > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+#services > div:first-child > div:last-child > div {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+#services > div:first-child > div:last-child > div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+#services h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+}
+
+#services > div:first-child > p {
+    text-align: center;
+    color: #6B7F4A;
+}
+
+#services > div:first-child > div:last-child > div div:first-child {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+#services > div:first-child > div:last-child > div div:nth-of-type(2) {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6B7F4A;
+    margin: 15px 0;
+}
+
+#services a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #6B7F4A;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+#services a:hover {
+    background: #5A6B3A;
+    transform: translateY(-2px);
+}
+
+/* ========== ПРЕИМУЩЕСТВА ========== */
+#advantages > div:first-child > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+#advantages > div:first-child > div:last-child > div {
+    text-align: center;
+    padding: 30px;
+    background: rgba(107, 127, 74, 0.05);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+#advantages > div:first-child > div:last-child > div:hover {
+    background: rgba(107, 127, 74, 0.1);
+    transform: translateY(-5px);
+}
+
+#advantages h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+}
+
+#advantages > div:first-child > p {
+    text-align: center;
+    color: #6B7F4A;
+}
+
+#advantages > div:first-child > div:last-child > div div:first-child {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#advantages h3 {
+    margin: 10px 0;
+    color: #3C4A2F;
+}
+
+/* ========== ФОРМА ========== */
+#contact > div:first-child {
+    background: linear-gradient(135deg, #3C4A2F 0%, #4A5A3A 100%);
+    border-radius: 30px;
+    color: white;
+}
+
+#contact > div:first-child > div:first-child {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 15px;
+}
+
+form {
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px 18px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #F5F7E9;
+    background: rgba(255,255,255,0.15);
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+form button {
+    background: #6B7F4A;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: #5A6B3A;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+form p:last-child {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* ========== ПОДВАЛ ========== */
+footer {
+    background: #2C3A1F;
+    color: #F5F7E9;
+}
+
+footer > div:first-child {
+    padding: 40px 20px;
+}
+
+footer > div:first-child > div:first-child {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+footer h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #F5F7E9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #8BA86B;
+}
+
+footer > div:first-child > div:last-child {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+}
+
+/* ========== ПЛАВАЮЩАЯ КНОПКА ========== */
+#floatingBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #6B7F4A;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+#floatingBtn:hover {
+    background: #5A6B3A;
+    transform: scale(1.1);
+}
+
+/* ========== МОДАЛЬНОЕ ОКНО ========== */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+#modal > div {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+#modal span {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+#modal span:hover {
+    color: #6B7F4A;
+}
+
+#modal h3 {
+    margin-bottom: 20px;
+    color: #2C3A1F;
+}
+
+/* ========== АДАПТИВНЫЕ СТИЛИ ========== */
+@media (max-width: 768px) {
+    section > div:first-child,
+    footer > div:first-child {
+        padding: 40px 15px;
+    }
+
+    section:first-of-type > div:first-child {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    section:first-of-type > div:first-child > div:last-child {
+        order: -1;
+    }
+
+    section:first-of-type > div > div:first-child > div:last-child {
+        gap: 15px;
+    }
+
+    button[data-carousel] {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    #services > div:first-child > div:last-child,
+    #advantages > div:first-child > div:last-child {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    footer > div:first-child > div:first-child {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    #floatingBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    #modal > div {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    section:first-of-type a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    section:first-of-type > div > div:first-child > div:last-child {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    button[data-carousel] {
+        margin: 10px 5px;
+    }
+}
+
+/* ========== АНИМАЦИИ ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section > div:first-child {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ========== СКРОЛЛ БАР ========== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #EBEFDD;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6B7F4A;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5A6B3A;
+}
