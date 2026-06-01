@@ -31,7 +31,7 @@
   /* Акценты */
   --accent-primary: #e07a5f;
   --accent-secondary: #c9a87c;
-  --accent-muted: rgba(224, 122, 95, 0.1);
+  --accent-muted: rgba(236, 147, 123, 0.1);
 
   /* Тени */
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
