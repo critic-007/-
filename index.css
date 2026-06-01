@@ -46,7 +46,7 @@
   --radius-full: 9999px;
 
   /* Анимации */
-  --transition-fast: 0.2s ease;
+  --transition-fast: 0.4s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.4s ease;
 }
